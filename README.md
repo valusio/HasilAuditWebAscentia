@@ -81,7 +81,7 @@ Dokumentasi temuan difokuskan pada observasi awal, seperti adanya *exposed defau
 
 ## 8. Bonus Improvement
 
-No separate bonus improvement was implemented. The work was focused on identifying the high-priority issues, though no actual codebase was available to apply fixes.
+Tidak dilakukan *bonus improvement* secara khusus. Pekerjaan difokuskan pada identifikasi permasalahan dengan tingkat prioritas tinggi yang ditemukan selama proses audit. Namun, perbaikan langsung pada *codebase* tidak dapat dilakukan karena *source code* yang diperlukan tidak tersedia untuk diterapkan.
 
 ## 9. Testing Strategy
 
