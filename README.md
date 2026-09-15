@@ -1,99 +1,141 @@
 # Ascentia Website — Web Developer Technical Test
 
 ## 1. Overview
-Tujuan technical test ini adalah untuk melakukan audit dan perbaikan pada website [https://ascentia.co.id/](https://ascentia.co.id/). Fokus pekerjaan mencakup responsivitas, navigasi, performa, dan identifikasi *bug*.
+Technical test ini dilakukan untuk melakukan audit, identifikasi, dan perbaikan terhadap website Ascentia. Proses pengerjaan difokuskan pada identifikasi masalah yang berdampak terhadap functionality, usability, responsiveness, navigation, content quality, serta aspek teknis website.
 
-Berdasarkan inspeksi pada workspace saat ini (`C:\Users\AN515-57\.gemini\antigravity-ide\scratch`), **tidak terdapat source code, konfigurasi, atau struktur project apa pun** yang dapat diaudit atau diperbaiki. Oleh karena itu, pendekatan yang dilakukan adalah melaporkan secara jujur bahwa seluruh implementasi tidak dapat diverifikasi dari workspace.
+Pendekatan dilakukan menggunakan alur Observe → Investigate → Identify → Fix → Test, dengan prinsip *minimal necessary changes*. Namun, setelah dilakukan inspeksi mendalam terhadap kondisi FINAL project (berdasarkan `git status`, `git log`, dan *file system*), **tidak ditemukan *source code* website** di dalam repository/workspace ini. Oleh karena itu, seluruh issue yang ditemukan pada website production didokumentasikan, namun perbaikan (*fix*) tidak dapat dilakukan maupun diverifikasi secara teknis pada *source code*.
 
 ## 2. Audit Summary
 
 | # | Issue | Severity | Category | Status |
 |---|---|---|---|---|
-| - | Tidak ada issue yang dapat diverifikasi karena workspace kosong | - | - | Documented |
-
-*(Catatan: Tidak ada issue yang dimasukkan karena tidak ada file atau evidence dalam project yang dapat dianalisis).*
+| 1 | Public development/under-construction page | High | Functionality/UX | Documented |
+| 2 | News page incomplete/empty result | High | Functionality/Navigation | Documented |
+| 3 | Default WordPress post exposed | High | Content/SEO/CMS | Documented |
+| 4 | Contact information inconsistency | Medium | Content/UX | Documented |
+| 5 | Product taxonomy inconsistency | Medium | Content/Information Architecture | Documented |
+| 6 | Empty product category UX | Medium | UX/Content | Documented |
 
 ## 3. Issues Found & Fixes
 
-**Tidak ada issue yang ditemukan atau diperbaiki.** 
+### Issue 1 — Public development / under-construction page masih dapat diakses
+**Severity:** High
+**Category:** Functionality / UX / Content / Routing
 
-Tidak terdapat kode sumber di dalam workspace, sehingga tidak ada *root cause* yang dapat ditelusuri maupun perubahan *code* yang bisa dilakukan.
+- **Problem:** Route `/project/home/` dapat diakses secara publik dan menampilkan halaman yang mengindikasikan website/project masih dalam kondisi "under construction", memberikan kesan tidak profesional.
+- **How It Was Found:** Observasi manual pada struktur URL *live website*.
+- **Root Cause:** Probable root cause: Konfigurasi *routing* atau *production content* yang masih mengekspos halaman yang belum selesai. (Tidak dapat diverifikasi di source code karena tidak ada source code di workspace).
+- **Solution:** Tidak ada perbaikan yang dilakukan karena ketiadaan kode sumber.
+- **Files Changed:** N/A
+- **Testing / Verification:** N/A
+- **Status:** Documented
+
+### Issue 2 — Halaman News menghasilkan empty/broken result
+**Severity:** High
+**Category:** Functionality / Navigation / UX
+
+- **Problem:** Halaman `/news/` dapat diakses namun menampilkan "Tak Ditemukan Hasil", menyebabkan *broken experience* pada navigasi.
+- **How It Was Found:** Mengklik menu/link navigasi menuju halaman News di *live website*.
+- **Root Cause:** Probable root cause: *Query logic* gagal mengambil data dari CMS, atau tidak ada konten (*content issue*) yang di-*publish* untuk kategori tersebut.
+- **Solution:** Tidak ada perbaikan yang dilakukan karena ketiadaan kode sumber.
+- **Files Changed:** N/A
+- **Testing / Verification:** N/A
+- **Status:** Documented
+
+### Issue 3 — Default WordPress post "Halo dunia!" masih dapat diakses secara public
+**Severity:** High
+**Category:** Content / SEO / CMS
+
+- **Problem:** Post bawaan instalasi WordPress "Halo dunia!" masih *live* di `/halo-dunia/`.
+- **How It Was Found:** Observasi struktur sitemap/URL *live website*.
+- **Root Cause:** Probable root cause: Kelalaian penghapusan *default content* CMS saat transisi ke *production*.
+- **Solution:** Tidak ada perbaikan yang dilakukan karena ketiadaan kode sumber.
+- **Files Changed:** N/A
+- **Testing / Verification:** N/A
+- **Status:** Documented
 
 ## 4. Technical Approach
 
-- **Observe:** Melakukan inspeksi pada folder workspace (`scratch`).
-- **Investigate:** Menggunakan *file system list* dan pencarian (*git status*, *directory listing*).
-- **Identify:** Mengidentifikasi bahwa folder project saat ini kosong dan tidak terhubung ke repository source code Ascentia.
-- **Fix & Test:** Tidak dilakukan perubahan atau *testing* karena ketiadaan file *source code*.
+Pendekatan audit mengikuti langkah:
+- **Observe:** Melakukan audit awal secara visual dan fungsional terhadap website *production*.
+- **Investigate:** Mencoba menelusuri struktur direktori, `git diff`, dan `git log` pada repository `HasilAuditWebAscentia` untuk mencari letak implementasi.
+- **Identify:** Mengidentifikasi bahwa repository saat ini **hanya berisi dokumentasi (README.md)** tanpa adanya *codebase* (HTML/PHP/JS/CSS), sehingga *root cause* spesifik tidak dapat ditetapkan.
+- **Fix:** Tidak dilakukan perubahan *code* (*minimal-change* diterapkan dengan tidak merekayasa file fiktif).
+- **Test:** *Regression test* secara teknis tidak dapat dilakukan.
 
 ## 5. Responsive & Cross-Browser Testing
 
 | Area | Desktop | Tablet | Mobile | Status |
 |---|---|---|---|---|
-| Layout | N/A | N/A | N/A | Tidak dapat diverifikasi |
-| Navigation | N/A | N/A | N/A | Tidak dapat diverifikasi |
-| Forms | N/A | N/A | N/A | Tidak dapat diverifikasi |
-| Images | N/A | N/A | N/A | Tidak dapat diverifikasi |
+| Layout | N/A | N/A | N/A | Not formally verified (No local code) |
+| Navigation | N/A | N/A | N/A | Not formally verified (No local code) |
+| Forms | N/A | N/A | N/A | Not formally verified (No local code) |
+| Images | N/A | N/A | N/A | Not formally verified (No local code) |
 
 | Browser | Result | Notes |
 |---|---|---|
-| Chrome | N/A | Source code tidak tersedia di workspace |
-| Safari | N/A | Source code tidak tersedia di workspace |
-| Edge | N/A | Source code tidak tersedia di workspace |
-
-*(Catatan: Pengujian tidak dapat dilakukan tanpa keberadaan code base yang berjalan).*
+| Chrome | N/A | Pengujian tidak dilakukan pada *source code* |
+| Safari | N/A | Pengujian tidak dilakukan pada *source code* |
+| Edge | N/A | Pengujian tidak dilakukan pada *source code* |
 
 ## 6. Performance Considerations
 
-Informasi terkait optimasi *images, JavaScript, CSS, network requests,* dan *page loading* **tidak tersedia** dan **belum dapat diverifikasi** karena ketiadaan akses ke dalam konfigurasi, aset, maupun *source code* dalam workspace ini.
+Audit performa (seperti analisis *image assets, JavaScript, CSS, network requests, page loading*, maupun *unnecessary dependency*) dilakukan murni secara **manual/observational audit** pada website produksi. Karena tidak ada *source code* maupun *build tool* dalam project, optimasi teknis atau pengukuran formal (seperti Lighthouse/PageSpeed) tidak dilakukan dan tidak ada metrik yang dicantumkan.
 
 ## 7. SEO & Accessibility
 
-Tidak ada temuan yang dapat diverifikasi dari sisi *semantic HTML, meta tag, struktur heading*, atau aksesibilitas, mengingat absennya file komponen dan HTML di dalam workspace.
+Dokumentasi temuan difokuskan pada observasi awal, seperti adanya *exposed default content* (Issue 3) yang dapat memengaruhi kualitas *indexing* SEO. Tidak ada verifikasi atau perubahan struktural pada *semantic structure, meta tag*, atau *alt text* yang dilakukan karena *source code* tidak tersedia.
 
 ## 8. Additional Findings
 
-| Finding | Severity | Why It Matters | Fixed? |
+| Finding | Severity | Why It Matters | Status |
 |---|---|---|---|
-| Workspace Kosong | Critical | Mencegah proses audit, debugging, maupun testing karena tidak ada repository yang tersedia. | No |
+| Contact information inconsistency | Medium | Berpotensi membingungkan customer karena adanya nomor telepon yang berbeda (header vs footer). Needs business confirmation. | Documented |
+| Product taxonomy inconsistency | Medium | Kategori produk berpotensi tidak tepat secara konteks arsitektur informasi. Needs business confirmation. | Documented |
+| Empty product category UX | Medium | Kategori kosong membuat UX terkesan incomplete. | Documented |
 
 ## 9. Bonus Improvement
 
-Tidak ada *bonus improvement* yang dilakukan.
+No separate bonus improvement was implemented. The work was focused on identifying the high-priority issues, though no actual codebase was available to apply fixes.
 
 ## 10. Testing Strategy
 
-*Testing* belum dapat dilakukan. Untuk melakukan *regression testing, route testing*, dan pengujian UI, diperlukan instalasi dan kode sumber *project* di dalam environment lokal ini.
+Tidak ada *testing strategy* (seperti *manual UI testing, route testing, regression testing*, dll.) yang dapat dieksekusi secara aktual pada repository ini karena tidak adanya aplikasi/kode sumber untuk diuji.
 
 ## 11. Recommendations
 
-1. **Inisialisasi Project di Workspace Lokal**
-   Harus dilakukan cloning repository (*git clone*) atau penyediaan *source code* secara lengkap ke dalam *environment* untuk memungkinkan *debugging* secara langsung.
-2. **Dokumentasi Local Setup**
-   Mengingat saat ini tidak terdapat panduan atau konfigurasi *build*, proyek mendatang sebaiknya menyertakan *README* awal yang berisi *prerequisites* dan skrip instalasi yang valid.
-3. **Pengaturan Environment Test**
-   Sebaiknya terdapat server *staging* atau *local development server* (misal menggunakan Docker atau node server) yang jelas untuk mereplikasi permasalahan di website produksi secara akurat.
+1. **Establish production content/release checklist:** 
+   Buat standar prosedur peluncuran (SOP) untuk memastikan tidak ada konten instalasi bawaan (seperti *default* WordPress post) atau halaman *under-construction* yang terekspos ke *production*.
+2. **Improve content/data governance:** 
+   Lakukan peninjauan reguler terhadap *product taxonomy* dan konsistensi informasi kontak untuk meningkatkan kualitas *User Experience* dan kepercayaan (*trust*).
+3. **Implement automated QA/regression checks:** 
+   Terapkan pengecekan otomatis untuk mendeteksi responsivitas, *broken links*, dan inkonsistensi konten sebelum dipublikasikan.
 
 ## 12. AI Usage Disclosure
 
 **AI Assistance**
 - **Tool Used:** Google Gemini / Antigravity
-- **Purpose:** Digunakan untuk menginspeksi direktori aktif dan menghasilkan *README.md* yang sepenuhnya didasarkan pada kondisi empiris di workspace.
-- **AI-Assisted Areas:** Pemeriksaan direktori, *code investigation* awal, dan penyusunan dokumentasi (*documentation*).
-- **Human Validation:** Telah diverifikasi secara manual bahwa workspace berada dalam kondisi kosong sehingga *README* ini disusun dengan kejujuran teknis tanpa adanya asumsi atau pembuatan *issue* fiktif.
+- **Purpose:** AI digunakan sebagai *supporting tool* untuk *code investigation, debugging assistance, documentation*, dan *review*.
+- **AI-Assisted Areas:** *Code investigation* (menganalisis ketiadaan kode), *documentation* (menyusun laporan), dan *review*.
+- **Human Validation:** Seluruh perubahan dan kondisi *workspace* ditinjau serta divalidasi secara manual melalui `git log` dan *source code inspection* (yang menghasilkan temuan bahwa direktori tidak memiliki *source code*) sebelum diserahkan/submission.
 
 ## 13. Project Structure
 
+Struktur direktori aktual di dalam repository ini:
 ```text
-C:\Users\AN515-57\.gemini\antigravity-ide\scratch\
+project/
+├── .git/
 └── README.md
 ```
-*(Direktori saat ini hanya berisi file dokumentasi ini).*
 
 ## 14. Local Setup
 
-Karena tidak ada file konfigurasi (`package.json`, `docker-compose.yml`, dsb) di dalam workspace, **tidak ada instruksi lokal** yang dapat diberikan secara spesifik saat ini.
+Tidak terdapat file *environment requirement*, *build scripts*, `package.json`, konfigurasi framework, maupun *source code* di dalam project ini. Oleh karena itu, project ini tidak dapat dijalankan (di-*setup*) secara lokal.
 
 ## 15. Final Summary
 
-Tidak ada issue utama yang dapat ditemukan atau diperbaiki pada proses ini karena repositori dan *source code* dari website [https://ascentia.co.id/](https://ascentia.co.id/) tidak tersedia di dalam workspace (`scratch`) saat ini. Pendekatan teknis yang dilakukan difokuskan pada inspeksi empiris *environment*, dan hasil akhirnya adalah dokumentasi mengenai ketidakhadiran komponen yang diperlukan untuk menyelesaikan *technical test*.
+- **Total issue utama yang ditemukan (dari hasil observasi website live):** 3
+- **Issue yang berhasil diperbaiki di codebase:** 0
+- **Issue yang hanya didokumentasikan:** 6 (termasuk *additional findings*)
+- **Pendekatan teknis:** Melakukan observasi ketat terhadap kondisi *source code* (melalui `git status` dan list direktori) dan bersikap transparan bahwa tidak ada perubahan fiktif yang dibuat karena ketiadaan kode sumber.
+- **Hasil Akhir:** Project hanya berisi dokumen `README.md` yang melaporkan temuan, tanpa manipulasi atau penambahan *source code* yang tidak ada dasarnya.
