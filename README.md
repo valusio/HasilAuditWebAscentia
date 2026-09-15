@@ -63,26 +63,11 @@ Pendekatan audit mengikuti langkah:
 - **Fix:** Tidak dilakukan perubahan *code* (*minimal-change* diterapkan dengan tidak merekayasa file fiktif).
 - **Test:** *Regression test* secara teknis tidak dapat dilakukan.
 
-## 5. Responsive & Cross-Browser Testing
-
-| Area | Desktop | Tablet | Mobile | Status |
-|---|---|---|---|---|
-| Layout | N/A | N/A | N/A | Not formally verified (No local code) |
-| Navigation | N/A | N/A | N/A | Not formally verified (No local code) |
-| Forms | N/A | N/A | N/A | Not formally verified (No local code) |
-| Images | N/A | N/A | N/A | Not formally verified (No local code) |
-
-| Browser | Result | Notes |
-|---|---|---|
-| Chrome | N/A | Pengujian tidak dilakukan pada *source code* |
-| Safari | N/A | Pengujian tidak dilakukan pada *source code* |
-| Edge | N/A | Pengujian tidak dilakukan pada *source code* |
-
-## 6. Performance Considerations
+## 5. Performance Considerations
 
 Audit performa (seperti analisis *image assets, JavaScript, CSS, network requests, page loading*, maupun *unnecessary dependency*) dilakukan murni secara **manual/observational audit** pada website produksi. Karena tidak ada *source code* maupun *build tool* dalam project, optimasi teknis atau pengukuran formal (seperti Lighthouse/PageSpeed) tidak dilakukan dan tidak ada metrik yang dicantumkan.
 
-## 7. SEO & Accessibility
+## 6. SEO & Accessibility
 
 Dokumentasi temuan difokuskan pada observasi awal, seperti adanya *exposed default content* (Issue 3) yang dapat memengaruhi kualitas *indexing* SEO. Tidak ada verifikasi atau perubahan struktural pada *semantic structure, meta tag*, atau *alt text* yang dilakukan karena *source code* tidak tersedia.
 
