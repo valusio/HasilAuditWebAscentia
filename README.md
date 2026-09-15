@@ -101,7 +101,7 @@ Tidak ada *testing strategy* (seperti *manual UI testing, route testing, regress
 **AI Assistance**
 - **Tool Used:** Google Gemini / Antigravity
 - **Purpose:** AI digunakan sebagai *supporting tool* untuk *code investigation, debugging assistance, documentation*, dan *review*.
-- **AI-Assisted Areas:** *Code investigation* (menganalisis ketiadaan kode), *documentation* (menyusun laporan), dan *review*.
+- **AI-Assisted Areas:** *documentation* (menyusun laporan), dan *review*.
 - **Human Validation:** Seluruh perubahan dan kondisi *workspace* ditinjau serta divalidasi secara manual melalui `git log` dan *source code inspection* (yang menghasilkan temuan bahwa direktori tidak memiliki *source code*) sebelum diserahkan/submission.
 
 ## 12. Project Structure
