@@ -71,7 +71,7 @@ Audit performa (seperti analisis *image assets, JavaScript, CSS, network request
 
 Dokumentasi temuan difokuskan pada observasi awal, seperti adanya *exposed default content* (Issue 3) yang dapat memengaruhi kualitas *indexing* SEO. Tidak ada verifikasi atau perubahan struktural pada *semantic structure, meta tag*, atau *alt text* yang dilakukan karena *source code* tidak tersedia.
 
-## 8. Additional Findings
+## 7. Additional Findings
 
 | Finding | Severity | Why It Matters | Status |
 |---|---|---|---|
@@ -79,15 +79,15 @@ Dokumentasi temuan difokuskan pada observasi awal, seperti adanya *exposed defau
 | Product taxonomy inconsistency | Medium | Kategori produk berpotensi tidak tepat secara konteks arsitektur informasi. Needs business confirmation. | Documented |
 | Empty product category UX | Medium | Kategori kosong membuat UX terkesan incomplete. | Documented |
 
-## 9. Bonus Improvement
+## 8. Bonus Improvement
 
 No separate bonus improvement was implemented. The work was focused on identifying the high-priority issues, though no actual codebase was available to apply fixes.
 
-## 10. Testing Strategy
+## 9. Testing Strategy
 
 Tidak ada *testing strategy* (seperti *manual UI testing, route testing, regression testing*, dll.) yang dapat dieksekusi secara aktual pada repository ini karena tidak adanya aplikasi/kode sumber untuk diuji.
 
-## 11. Recommendations
+## 10. Recommendations
 
 1. **Establish production content/release checklist:** 
    Buat standar prosedur peluncuran (SOP) untuk memastikan tidak ada konten instalasi bawaan (seperti *default* WordPress post) atau halaman *under-construction* yang terekspos ke *production*.
@@ -96,7 +96,7 @@ Tidak ada *testing strategy* (seperti *manual UI testing, route testing, regress
 3. **Implement automated QA/regression checks:** 
    Terapkan pengecekan otomatis untuk mendeteksi responsivitas, *broken links*, dan inkonsistensi konten sebelum dipublikasikan.
 
-## 12. AI Usage Disclosure
+## 11. AI Usage Disclosure
 
 **AI Assistance**
 - **Tool Used:** Google Gemini / Antigravity
@@ -104,7 +104,7 @@ Tidak ada *testing strategy* (seperti *manual UI testing, route testing, regress
 - **AI-Assisted Areas:** *Code investigation* (menganalisis ketiadaan kode), *documentation* (menyusun laporan), dan *review*.
 - **Human Validation:** Seluruh perubahan dan kondisi *workspace* ditinjau serta divalidasi secara manual melalui `git log` dan *source code inspection* (yang menghasilkan temuan bahwa direktori tidak memiliki *source code*) sebelum diserahkan/submission.
 
-## 13. Project Structure
+## 12. Project Structure
 
 Struktur direktori aktual di dalam repository ini:
 ```text
@@ -113,11 +113,11 @@ project/
 └── README.md
 ```
 
-## 14. Local Setup
+## 13. Local Setup
 
 Tidak terdapat file *environment requirement*, *build scripts*, `package.json`, konfigurasi framework, maupun *source code* di dalam project ini. Oleh karena itu, project ini tidak dapat dijalankan (di-*setup*) secara lokal.
 
-## 15. Final Summary
+## 14. Final Summary
 
 - **Total issue utama yang ditemukan (dari hasil observasi website live):** 3
 - **Issue yang berhasil diperbaiki di codebase:** 0
